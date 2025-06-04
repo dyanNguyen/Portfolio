@@ -21,7 +21,7 @@ const Home = () => (
           </span>
         </h2>
         <p>I create and design websites with great UX/UI.</p>
-        <button className="btn"><a href="/CV-NguyenLeDanh.pdf" download className="download-btn">Download CV</a></button>
+        <button className="btn"><a href="${process.env.PUBLIC_URL}/CV-NguyenLeDanh.pdf" download className="download-btn">Download CV</a></button>
       </div>
       <div className="home-right">
         <img src={avatar} alt="avatar" />
