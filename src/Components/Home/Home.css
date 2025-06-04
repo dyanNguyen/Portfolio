@@ -40,6 +40,13 @@
   cursor: pointer;
   font-weight: bold;
 }
+.btn:hover{
+    background-color: #fa0b23;
+}
+.download-btn{
+    text-decoration: none;
+    color: white;
+}
 
 .home-right img {
   max-width: 100%;
