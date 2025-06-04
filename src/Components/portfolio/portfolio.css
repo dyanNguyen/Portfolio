@@ -1,0 +1,35 @@
+.portfolio-section {
+  background-color: inherit;
+  color: inherit;;
+  padding: 60px 40px;
+  /* margin-left: 210px; */
+  height: 100vh;
+}
+.portfolio-section h2{
+    text-align: center;
+    color: #ff4b5c;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    
+}
+
+.portfolio-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 20px;
+  
+}
+
+.item {
+  background: #2c2c2c;
+  padding: 20px;
+  border-radius: 10px;
+  flex: 1;
+  min-width: 200px;
+  transition: color 0.3s;
+
+}
+body.light .item {
+  background-color: #bbb7b7;
+}

@@ -1,0 +1,86 @@
+.sidebar {
+  position: fixed;
+  width: 200px;
+  height: 100%;
+  background-color: #333;
+  padding: 20px;
+  transition: transform 0.3s ease-in-out;
+  z-index: 1000;
+}
+
+.sidebar p{
+    color: white;
+    font-size: 100px;
+    transition: color 0.3s;
+    
+}
+/* Cho light mode */
+body.light .sidebar p {
+  color: #333;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 100px;
+  margin-left: 50px;
+}
+
+.sidebar li {
+  margin-bottom: 20px;
+  margin-top: 30px;
+}
+
+.sidebar a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.sidebar a:hover {
+  text-decoration: underline;
+}
+
+.sidebar-icon{
+  color: inherit;
+  transition: color 0.3s;
+}
+
+/* Cho light mode */
+body.light .sidebar-icon {
+  color: #333;
+}
+
+/* Hamburger icon */
+/* .hamburger {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: white;
+  margin-bottom: 20px;
+}
+
+
+@media screen and (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%);
+    width: 180px;
+    background-color: #222;
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  .hamburger {
+    display: block;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 1100;
+  }
+
+  .sidebar ul {
+    margin-top: 60px;
+  }
+} */

@@ -1,0 +1,41 @@
+.about-section {
+  padding: 60px 40px;
+  background-color: inherit;
+  color: inherit;
+  /* margin-left: 210px; */
+  height: 100vh;
+}
+
+
+.about-section h2 {
+  font-size: 2rem;
+  color: #ff4b5c;
+  margin-bottom: 20px;
+}
+
+.about-section p {
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+.about-cards {
+  display: flex;
+  gap: 30px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background-color: #2a2a2a;
+  padding: 20px;
+  border-radius: 10px;
+  flex: 1;
+  min-width: 200px;
+  text-align: center;
+  transition: color 0.3s;
+
+}
+/* Cho light mode */
+body.light .card {
+  background-color: #bbb7b7;
+}

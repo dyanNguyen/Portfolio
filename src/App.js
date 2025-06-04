@@ -1,24 +1,57 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState, useRef, useEffect} from "react";
+import "./App.css";
+import SideBar from "./Components/SideBar/SideBar";
+import Home from "./Components/Home/Home";
+import About from "./Components/About/About";
+import Portfolio from "./Components/portfolio/portfolio";
+import Resume from "./Components/resume/Resume";
+import Services from "./Components/Services/Service";
+import { ThemeProvider } from "./ThemeContext";
+import ThemeToggle from "./Components/Theme/ThemeToggle";
+import { FiMenu } from "react-icons/fi";
 
 function App() {
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const sidebarRef = useRef(null);
+  const hamburgerRef = useRef(null);
+
+  const toggleSidebar = () => setSidebarOpen(!sidebarOpen);
+   // Đóng sidebar khi click ra ngoài
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        sidebarOpen &&
+        sidebarRef.current &&
+        !sidebarRef.current.contains(event.target) &&
+        hamburgerRef.current &&
+        !hamburgerRef.current.contains(event.target)
+      ) {
+        setSidebarOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [sidebarOpen]);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <ThemeProvider>
+      <div className="App">
+        <div className="hamburger" ref={hamburgerRef} onClick={toggleSidebar}>
+          <FiMenu className="menu-icon"/>
+        </div>
+        <SideBar isOpen={sidebarOpen} toggleSidebar={toggleSidebar} sidebarRef={sidebarRef}/>
+        <ThemeToggle />
+        <main className="content">
+          <Home />
+          <About />
+          <Portfolio />
+          <Resume />
+          <Services />
+        </main>
     </div>
+    </ThemeProvider>
   );
 }
 

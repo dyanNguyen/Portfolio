@@ -1,0 +1,46 @@
+.resume-section {
+  background-color: inherit;
+  color: inherit;
+  padding: 60px 40px;
+  height: 100vh;
+  /* margin-left: 210px; */
+  align-items: center;
+}
+
+.resume-section h2{
+    color: #ff4b5c;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 400px;
+}
+
+.box{
+  transition: color 0.3s;
+}
+/* Cho light mode */
+body.light .box {
+  background-color: #cecaca;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  max-width: 100%;
+}
+
+.contact-form button {
+  background: #ff4b5c;
+  border: none;
+  color: white;
+  padding: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+}
